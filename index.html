@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goldman&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/e0fef74fb6.js" crossorigin="anonymous"></script>
+    <title>Wiek pupila</title>
+</head>
+<body>
+    <div class="site-wrap">
+    <header class="header">
+        <h1 class="header__title">Wiek pupila</h1>
+        <h2 class="header__info">Sprawdź ile ludzkich lat ma Twój pupil!</h2>
+    </header>
+    <main>
+        <section class="start-page">
+            <div class="start-page__info-wrap">
+                <div tabindex="0" role="button" class="start-page__animal-choice start-page__animal-choice--cat"></div>
+                <p class="start-page__animal-info">Kot?</p>
+            </div>
+            <p class="start-page__compare-sign start-page__compare-sign--hidden">vs.</p>
+            <div class="start-page__info-wrap">
+                <div tabindex="0" role="button" class="start-page__animal-choice start-page__animal-choice--dog"></div>
+                <p class="start-page__animal-info">Pies?</p>
+            </div>
+        </section>
+        <section class="hidden panel-cat-wrap">
+            <form action="" class="animal-age animal-age--cat">
+                <div class="animal-age__label-wrap animal-age__label-wrap--cat">
+                    <label for="cat-name" class="animal-age__label">Podaj imię kota:</label>
+                    <input required placeholder="Imię kota..." type="text" class="animal-age__input animal-age__input--cat-name" id="cat-name">
+                </div>
+                <div class="animal-age__label-wrap animal-age__label-wrap--cat">
+                    <label for="cat-age" class="animal-age__label">Podaj wiek kota:</label>
+                    <input min="1" max="99" required placeholder="Wiek kota..." type="number" class="animal-age__input animal-age__input--cat-age" id="cat-age">
+                </div>
+                <div class="animal-age__controls">
+                    <div class="animal-age__side-btns .animal-age__side-btns--cat ">
+                        <p class="animal-age__advice">Jeżeli kot ma pozniżej 1 roku, 
+                            podaj wiek w miesiącach (1-12)
+                            oraz kliknij:</p>
+                        <button type="button" class="btn btn--months">Miesiące?</button>
+                    </div>
+                    <div class="animal-age__main-btns">
+                        <button type="submit" class="btn btn--calc">Oblicz wiek!</button>
+                        <button type="button" class="btn btn--back">Wróć</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="hidden panel-dog-wrap">
+            <form action="" class="animal-age animal-age--dog">
+                <div class="left-side-wrapper">
+                    <div class="animal-age__label-wrap animal-age__label-wrap--dog">
+                        <label for="dog-name" class="animal-age__label animal-age__label--dog">Podaj imię psa:</label>
+                        <input required placeholder="Imię psa..." type="text" id="dog-name" class="animal-age__input animal-age__input--dog-name">
+                    </div>
+                    <div class="animal-age__label-wrap animal-age__label-wrap--dog">
+                        <label for="dog-age" class="animal-age__label">Podaj wiek psa:</label>
+                        <input min="1" required placeholder="Wiek psa..." type="number" id="dog-age" class="animal-age__input animal-age__input--dog-age">
+                    </div>
+                    <div class="animal-age__side-btns">
+                        <p class="animal-age__advice animal-age__advice--dog">Jeżeli pies ma pozniżej 1 roku, 
+                            podaj wiek w miesiącach (1-12)
+                            oraz kliknij:</p>
+                        <button type="button" class="btn btn--months">Miesiące?</button>
+                    </div>
+                </div>
+                <div class="right-side-wrapper dog-sizes">
+                    <p class="dog-sizes__size-info">Wybierz rozmiar psa:</p>
+                    <div tabindex="0" class="dog-sizes__choose-size">
+                        <div tabindex="0" class="dog-sizes__container dog-sizes__container--small" data-size="small" ></div>
+                        <div tabindex="0" class="dog-sizes__container dog-sizes__container--active dog-sizes__container--medium" data-size="medium" ></div>
+                        <div tabindex="0" class="dog-sizes__container dog-sizes__container--big" data-size="big"></div>
+                    </div>
+                    <div class="animal-age__main-btns">
+                        <button type="submit" class="btn btn--calc">Oblicz wiek!</button>
+                        <button type="button" class="btn btn--back">Wróć</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <div class="hidden result">
+            <div class="result__popup">
+                <i class="result__close-icon far fa-times-circle"></i>
+                <p class="result__info">Pusia ma 16 lat!</p>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p class="site-footer__author-info">created by Damian Kuchta</p>
+        <a class="site-footer__github-link" href="https://github.com/damian-kuchta"><img class="site-footer__github-mark-img" src="./img/GitHub-Mark-Light-120px-plus.png" alt=""></a>
+    </footer>
+</div>
+<script src="./script.js"></script>
+<script src="./animalsAge.js"></script>
+</body>
+</html>

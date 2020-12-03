@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    color: #fff;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.site-wrap {
+    margin: 0 auto;
+    max-width: 1400px;
+    min-height: 100vh;
+    position: relative;
+    padding: 0 100px;
+}
+
+.panel-cat-wrap,
+.panel-dog-wrap {
+    padding-bottom: 100px;
+}
+
+/* BUTTONS */
+.btn {
+    display: block;
+    font-size: 22px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.349);
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+    transition: .5s;
+}
+
+.btn:hover {
+    background-position: right center;
+}
+
+.btn--months:hover,
+.btn--months-active {
+    background-image: linear-gradient(to right, #56ab2f 0%, #a8e063 51%, #56ab2f 100%);
+}
+
+.btn--calc {
+    background-image: linear-gradient(to right, #56ab2f 0%, #a8e063 51%, #56ab2f 100%)
+}
+
+.btn--back {
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 45px 0;
+}
+
+
+.header__title {
+    margin-bottom: 25px;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.header__info {
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+/* START PAGE */
+.start-page {
+    margin: 50px auto;
+    max-width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+}
+
+.start-page__animal-choice {
+    width: 270px;
+    height: 270px;
+    border: 10px solid#fff;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-shadow: -25px 25px 16px 0 rgba(0, 0, 0, 0.507);
+    transition: .4s;
+}
+
+.start-page__animal-choice--dog {
+    box-shadow: 25px 25px 16px 0 rgba(0, 0, 0, 0.507);
+}
+
+.start-page__animal-choice:hover {
+    transform: scale(1.05);
+    border: 10px solid rgb(65, 79, 122);
+}
+
+.start-page__animal-choice--cat {
+    background-image: url('../img/cat2.jpg');
+}
+
+.start-page__animal-choice--dog {
+    background-image: url('../img/dog3.jpg');
+}
+
+.start-page__info-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.start-page__animal-info {
+    padding: 30px;
+    text-align: center;
+}
+
+/* PANEL CAT && PANEL DOG COMMON */
+.animal-age--cat {
+    width: 50%;
+}
+
+.animal-age__label-wrap {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animal-age__label {
+    font-size: 34px;
+}
+
+.animal-age__input {
+    padding: 10px 12px;
+    min-width: 30%;
+    font-size: 24px;
+    border: none;
+    border-radius: 28px;
+}
+
+.animal-age__input::placeholder {
+    font-size: 22px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.animal-age__controls {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.animal-age__side-btns {
+    flex-basis: 40%;
+}
+
+.animal-age__advice {
+    font-size: 18px;
+}
+
+.animal-age__main-btns {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* PANEL DOG */
+.animal-age--dog {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.animal-age__advice--dog {
+    width: 48%;
+}
+
+.dog-sizes {
+    margin-top: 30px;
+}
+
+.dog-sizes__size-info {
+    margin-bottom: 10px;
+    font-size: 34px;
+}
+
+.dog-sizes__choose-size {
+    display: flex;
+    outline: none;
+}
+
+.dog-sizes__container {
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    border-radius: 25px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dog-sizes__container:hover,
+.dog-sizes__container--active {
+    border: 5px solid rgb(62, 85, 61);
+    transform: scale(1.05);
+}
+
+.dog-sizes__container--small {
+    background-size: 65%;
+    background-image: url('../img/dog-size-small.png');
+}
+
+.dog-sizes__container--medium {
+    background-size: 50%;
+    background-image: url('../img/dog-size-medium.png');
+}
+
+.dog-sizes__container--big {
+    background-size: 90%;
+    background-image: url('../img/dog-size-big.png');
+}
+
+/* RESULT */
+
+.result__popup {
+    width: 65%;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.521);
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.349);
+}
+
+.result__close-icon {
+    font-size: 70px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.result__close-icon:hover {
+    transform: rotate(90deg);
+}
+
+.result__info {
+    font-size: 60px;
+}
+
+.result__info::first-letter {
+    text-transform: capitalize;
+}
+
+/* FOOTER */
+.site-footer {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.site-footer__author-info {
+    font-size: 16px;
+}
+
+.site-footer__github-link {
+    margin-left: 30px;
+}
+
+.site-footer__github-mark-img {
+    width: 60px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (max-width: 1275px) {
+    .start-page__animal-choice {
+        width: 220px;
+        height: 220px;
+    }
+
+    .animal-age--cat,
+    .animal-age--dog {
+        width: 65%;
+    }
+
+    .dog-sizes__choose-size {
+        justify-content: space-between;
+    }
+
+    .result__info {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .start-page {
+        max-width: 75%;
+    }
+
+    .animal-age--cat,
+    .animal-age--dog {
+        width: 75%;
+    }
+
+    .result__close-icon {
+        font-size: 70px;
+    }
+
+    .result__info {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 950px) {
+    .site-wrap {
+        padding: 0 80px;
+    }
+
+    .start-page {
+        max-width: 85%;
+    }
+
+    .header__title {
+        font-size: 55px;
+    }
+
+    .header__info,
+    .start-page {
+        font-size: 35px;
+    }
+
+    .animal-age__label,
+    .dog-sizes__size-info {
+        font-size: 28px;
+    }
+
+    .animal-age__input {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+
+    .animal-age__input::placeholder {
+        font-size: 18px;
+    }
+
+    .site-footer__github-link {
+        margin-left: 15px;
+    }
+
+    .site-footer__github-mark-img {
+        width: 45px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 835px) {
+    .header__title {
+        font-size: 45px;
+        margin-bottom: 25px;
+    }
+
+    .header__info {
+        font-size: 30px;
+    }
+
+    .start-page {
+        max-width: 70%;
+        margin-top: 0;
+    }
+
+    .start-page__animal-choice {
+        width: 170px;
+        height: 170px;
+        border: 6px solid #fff;
+    }
+
+    .start-page__animal-choice:hover {
+        border: 6px solid rgb(60, 100, 44);
+    }
+
+    .animal-age__main-btns {
+        flex-basis: 50%;
+    }
+
+    .dog-sizes__container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 775px) {
+
+    .animal-age__label,
+    .dog-sizes__size-info {
+        font-size: 24px;
+    }
+
+    .animal-age__input {
+        font-size: 18px;
+    }
+
+    .animal-age__input::placeholder {
+        font-size: 16px;
+    }
+
+    .animal-age__side-btns {
+        flex-basis: 50%;
+    }
+
+    .result__popup {
+        width: 85%;
+        height: 50vh;
+    }
+
+    .result__info {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 710px) {
+
+    .btn {
+        font-size: 19px;
+    }
+
+    .header__info,
+    .start-page {
+        font-size: 25px;
+    }
+
+    .animal-age__label,
+    .dog-sizes__size-info {
+        font-size: 20px;
+    }
+
+    .start-page {
+        max-width: 85%;
+    }
+
+    .start-page__animal-choice {
+        width: 150px;
+        height: 150px;
+    }
+
+    .animal-age--cat,
+    .animal-age--dog {
+        width: 100%;
+    }
+
+    .animal-age__label-wrap {
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .animal-age__input {
+        margin-top: 7px;
+        font-size: 16px;
+    }
+
+    .animal-age__input::placeholder {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 570px) {
+    .site-wrap {
+        padding: 0 50px;
+    }
+
+    .header__info,
+    .start-page {
+        font-size: 21px;
+    }
+
+    .start-page__animal-choice {
+        width: 120px;
+        height: 120px;
+    }
+
+    .dog-sizes__container {
+        width: 120px;
+        height: 120px;
+        margin-right: 3px;
+        border: 3px solid#fff;
+    }
+
+    .dog-sizes__container:hover {
+        border: 3px solid rgb(60, 100, 44);
+        transform: scale(1.05);
+    }
+
+    .result__popup {
+        width: 85%;
+        height: 40vh;
+    }
+
+    .result__close-icon {
+        font-size: 50px;
+    }
+
+    .result__info {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 485px) {
+    .btn {
+        font-size: 17px;
+    }
+
+    .site-wrap {
+        padding: 0 50px;
+    }
+
+    .animal-age__advice--dog {
+        width: 60%;
+    }
+
+    .site-footer__github-link {
+        margin-left: 10px;
+    }
+
+    .site-footer__github-mark-img {
+        width: 45px;
+    }
+
+    .site-footer__github-mark-img {
+        width: 35px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .site-wrap {
+        padding: 0 35px;
+    }
+
+    .dog-sizes__container {
+        width: 95px;
+        height: 95px;
+    }
+
+    .animal-age__side-btns {
+        flex-basis: 65%;
+    }
+
+    .result__popup {
+        width: 85%;
+        height: 40vh;
+    }
+
+    .result__close-icon {
+        font-size: 50px;
+    }
+
+    .result__info {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .start-page__animal-choice {
+        width: 110px;
+        height: 110px;
+    }
+
+    .result__popup {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .result__close-icon {
+        font-size: 40px;
+    }
+
+    .result__info {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 345px) {
+    .btn {
+        padding: 10px 15px;
+    }
+
+    .header {
+        padding: 30px 0 15px;
+    }
+
+    .header__title {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .header__info {
+        font-size: 17px;
+    }
+    .site-wrap {
+        min-height: 120vh;
+        padding: 0 30px;
+    }
+
+    .start-page {
+        flex-direction: column;
+    }
+
+    .start-page__animal-info {
+        padding: 10px 0;
+    }
+
+
+
+    .start-page__animal-choice {
+        order: 2;
+    }
+
+    .start-page__animal-choice {
+        width: 140px;
+        height: 140px;
+    }
+
+    .animal-age__label, .dog-sizes__size-info, .animal-age__advice {
+        font-size: 16px;
+    }
+    .start-page__animal-choice--cat {
+        margin-bottom: 30px;
+    }
+
+    .start-page__compare-sign {
+        display: none;
+    }
+
+    .dog-sizes__container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .result__popup {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .result__close-icon {
+        font-size: 40px;
+    }
+
+    .result__info {
+        font-size: 24px;
+    }
+}
+
+.hidden {
+    display: none;
+}
