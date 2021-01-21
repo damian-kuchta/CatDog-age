@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('./img/bg.png');
+    background-image: url('../img/site-bg.png');
     background-size: cover;
     color: #fff;
     font-family: 'Ubuntu Condensed', sans-serif;
@@ -111,11 +111,11 @@ body {
 }
 
 .start-page__animal-choice--cat {
-    background-image: url('./img/cat2.jpg');
+    background-image: url('../img/cat2.jpg');
 }
 
 .start-page__animal-choice--dog {
-    background-image: url('./img/dog3.jpg');
+    background-image: url('../img/dog3.jpg');
 }
 
 .start-page__info-wrap {
@@ -225,17 +225,17 @@ body {
 
 .dog-sizes__container--small {
     background-size: 65%;
-    background-image: url('./img/dog-size-small.png');
+    background-image: url('../img/dog-size-small.png');
 }
 
 .dog-sizes__container--medium {
     background-size: 50%;
-    background-image: url('./img/dog-size-medium.png');
+    background-image: url('../img/dog-size-medium.png');
 }
 
 .dog-sizes__container--big {
     background-size: 90%;
-    background-image: url('./img/dog-size-big.png');
+    background-image: url('../img/dog-size-big.png');
 }
 
 /* RESULT */
